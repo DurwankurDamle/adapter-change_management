@@ -128,7 +128,7 @@ healthcheck(callback) {
       */
       this.emitOffline();
       log.error("Error returned for : ${JSON.stringify(error)} for id:  ${this.id}");
-      callback(error);
+      //callback(error);
    } else {
         console.log("success block");
      /**
@@ -143,7 +143,7 @@ healthcheck(callback) {
       */
       this.emitOnline();
       log.debug("Response returned : \n${JSON.stringify(result)}");
-      callback(result);
+      //callback(result);
    }
  });
 }
