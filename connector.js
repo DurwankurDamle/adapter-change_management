@@ -137,7 +137,7 @@ class ServiceNowConnector {
    * it must call function isHibernating.
    */
 //    Dont know if we need this, looks like not needed?
-   if( error || response.statusCode !== 200 || isHibernating(response))
+   if( error || response.statusCode !== 200 || this.isHibernating(response))
         return callback(error);
     
     return callback(response);  
