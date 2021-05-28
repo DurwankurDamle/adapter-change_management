@@ -125,7 +125,7 @@ healthcheck(callback) {
       * for the callback's errorMessage parameter.
       */
       this.emitOffline();
-      log.error("Error returned for :" + this.id);
+      log.error("Error returned for : ${JSON.stringify(error)} for id:  ${this.id}");
       return callback(result, error);
    } else {
      /**
@@ -139,7 +139,7 @@ healthcheck(callback) {
       * responseData parameter.
       */
       this.emitOnline();
-      log.debug("Response returned : "+ result);
+      log.debug("Response returned : \n${JSON.stringify(result)}");
       return callback(result, error);
    }
  });
