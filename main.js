@@ -203,11 +203,13 @@ healthcheck(callback) {
      * get() takes a callback function.
      */
      console.log("in get record");
-     return this.connector.get((data, error)=>{
+    this.connector.get((data, error)=>{
          if (error) {
             console.error(`\nError returned from GET request:\n${JSON.stringify(error)}`);
+            callback(error);
         }   
         console.log(`\nResponse returned from GET request:\n${JSON.stringify(data)}`)
+        callback(data);
      });
   }
 
