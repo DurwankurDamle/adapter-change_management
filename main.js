@@ -126,7 +126,7 @@ healthcheck(callback) {
       */
       this.emitOffline();
       log.error("Error returned for :" + this.id);
-      callback(result, error);
+      return callback(result, error);
    } else {
      /**
       * Write this block.
@@ -140,7 +140,7 @@ healthcheck(callback) {
       */
       this.emitOnline();
       log.debug("Response returned : "+ result);
-      callback(result, error);
+      return callback(result, error);
    }
  });
 }
