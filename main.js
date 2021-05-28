@@ -112,6 +112,7 @@ healthcheck(callback) {
     * the blocks for each branch.
     */
    if (error) {
+       console.log("Error block");
      /**
       * Write this block.
       * If an error was returned, we need to emit OFFLINE.
@@ -126,8 +127,9 @@ healthcheck(callback) {
       */
       this.emitOffline();
       log.error("Error returned for : ${JSON.stringify(error)} for id:  ${this.id}");
-      return callback(result, error);
+      return callback(error);
    } else {
+        console.log("success block");
      /**
       * Write this block.
       * If no runtime problems were detected, emit ONLINE.
@@ -140,7 +142,7 @@ healthcheck(callback) {
       */
       this.emitOnline();
       log.debug("Response returned : \n${JSON.stringify(result)}");
-      return callback(result, error);
+      return callback(result);
    }
  });
 }
