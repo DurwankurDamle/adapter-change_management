@@ -105,6 +105,7 @@ class ServiceNowAdapter extends EventEmitter {
  */
 healthcheck(callback) {
  this.getRecord((result, error) => {
+     console.log("inside the function");
    /**
     * For this lab, complete the if else conditional
     * statements that check if an error exists
