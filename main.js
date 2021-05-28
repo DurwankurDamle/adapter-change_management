@@ -157,6 +157,7 @@ healthcheck(callback) {
     log.warn('ServiceNow: Instance is unavailable.');
   }
 
+
   /**
    * @memberof ServiceNowAdapter
    * @method emitOnline
