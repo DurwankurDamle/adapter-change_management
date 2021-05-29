@@ -136,10 +136,9 @@ class ServiceNowConnector {
    * This function must not check for a hibernating instance;
    * it must call function isHibernating.
    */
-//    Dont know if we need this, looks like not needed?
-   if( error || response.statusCode !== 200 || this.isHibernating(response))
+   if( error || this.isHibernating(response)){
         return callback(error);
-    
+   }
     return callback(response);  
 }
 
@@ -175,6 +174,7 @@ class ServiceNowConnector {
     baseUrl: this.options.url,
     uri: uri
   };
+
   /**
    * You must build the requestOptions object.
    * This is not a simple copy/paste of the requestOptions object
